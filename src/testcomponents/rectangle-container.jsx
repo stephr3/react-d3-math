@@ -15,9 +15,11 @@ export default class RectangleContainer extends React.Component{
   render() {
     return (<div>
       <Rectangle color={this.state.color}/>
-      <button className="btn randomize" onClick={() => this.changeColor()}>
-        Change Color
-      </button>
+      <div className="controls">
+        <button className="btn randomize" onClick={() => this.changeColor()}>
+          Change Color
+        </button>
+      </div>
     </div>)
   }
 }
