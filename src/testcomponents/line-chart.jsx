@@ -13,7 +13,7 @@ const xScale = (props) => {
 
 const yScale = (props) => {
   return d3.scale.linear()
-    .domain([0, d3.max(props.data)])
+    .domain([0, d3.max(props.datasetTotal)])
     .range([props.height - props.padding, props.padding]);
 };
 
