@@ -1,4 +1,3 @@
-// unfinished/src/components/data-circles.jsx
 import React from 'react';
 
 const renderCircles = (props) => {
@@ -6,7 +5,7 @@ const renderCircles = (props) => {
     const circleProps = {
       cx: props.xScale(coords[0]),
       cy: props.yScale(coords[1]),
-      r: 2,
+      r: 5,
       key: index
     };
     return <circle {...circleProps} />;
@@ -14,5 +13,6 @@ const renderCircles = (props) => {
 };
 
 export default (props) => {
-  return <g>{ props.data.map(renderCircles(props)) }</g>
+  return <g>{ props.data.map(renderCircles(props)) }
+  </g>
 }

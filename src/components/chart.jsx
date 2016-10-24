@@ -1,43 +1,41 @@
-// unfinished/src/components/chart.jsx
-import React       from 'react';
-import ScatterPlot from './scatter-plot';
+import React from 'react';
+import LineChart from './line-chart';
+const date1 = new Date(2014, 0, 15);
+const date2 = new Date(2014, 4, 20);
+const date3 = new Date(2014, 8, 3);
 
+const date4 = new Date(2015, 1, 14);
+const date5 = new Date(2015, 5, 2);
+const date6 = new Date(2015, 9, 3);
+
+const datasetA = [[date1, 3], [date2, 11], [date3, 7]];
+const datasetB = [[date4, 8], [date5, 4], [date6, 6]];
 const styles = {
-  width   : 500,
-  height  : 300,
-  padding : 30,
+  width: 500,
+  height: 300,
+  padding: 30
 };
 
-// The number of data points for the chart.
-const numDataPoints = 50;
-
-// A function that returns a random number from 0 to 1000
-const randomNum     = () => Math.floor(Math.random() * 1000);
-
-// A function that creates an array of 50 elements of (x, y) coordinates.
-const randomDataSet = () => {
-  return Array.apply(null, {length: numDataPoints}).map(() => [randomNum(), randomNum()]);
-}
-
-export default class Chart extends React.Component{
+export default class Hello extends React.Component{
   constructor(props) {
     super(props);
-    this.state = { data: randomDataSet() };
+    this.state = { data: datasetA };
   }
 
-  randomizeData() {
-    this.setState({ data: randomDataSet() });
+  toggleData() {
+    var data = this.state.data === datasetA ? datasetB : datasetA;
+    this.setState({ data: data });
+    console.log('Toggle: ' + this.state.data);
   }
 
   render() {
-    return <div>
-      <h1>Playing With React and D3</h1>
-      <ScatterPlot {...this.state} {...styles} />
+    return (<div>
+      <LineChart {...this.state} {...styles} />
       <div className="controls">
-        <button className="btn randomize" onClick={() => this.randomizeData()}>
-          Randomize Data
+        <button className="btn toggle" onClick={() => this.toggleData()}>
+          Toggle Data
         </button>
       </div>
-    </div>
+      </div>)
   }
 }
