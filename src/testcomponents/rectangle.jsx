@@ -14,7 +14,7 @@ export default class Rectangle extends React.Component{
   colorRect() {
     console.log(this.props.color);
     var node = this.refs.rect;
-    var rect = d3.select('rect').style('fill', this.props.color);
+    var rect = d3.selectAll('rect').style('fill', this.props.color);
     d3.select(node).call(rect);
   }
   render() {

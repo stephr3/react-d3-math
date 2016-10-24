@@ -1,5 +1,6 @@
 import React from 'react';
 import d3 from 'd3';
+import XYAxis from './x-y-axis';
 
 const mindate = new Date(2012, 0, 1);
 const maxdate = new Date(2012, 0, 31);
@@ -18,5 +19,7 @@ const yScale = (props) => {
 
 export default (props) => {
   const scales = { xScale: xScale(props), yScale: yScale(props) };
-  return (<svg width={props.width} height={props.height}></svg>)
+  return (<svg width={props.width} height={props.height}>
+    <XYAxis {...props} {...scales} />
+    </svg>)
 }
