@@ -1,9 +1,15 @@
 import React from 'react';
 import LineChart from './line-chart';
+const date1 = new Date(2014, 0, 15);
+const date2 = new Date(2014, 4, 20);
+const date3 = new Date(2014, 8, 3);
 
-const datasetA = {year: 2014, numbers:[1,2,3,4] };
-const datasetB = {year: 2015, numbers: [5,3,2,7]};
-const datasetTotal = datasetA.numbers.concat(datasetB.numbers);
+const date4 = new Date(2015, 1, 14);
+const date5 = new Date(2015, 5, 2);
+const date6 = new Date(2015, 9, 3);
+
+const datasetA = [[date1, 3], [date2, 11], [date3, 7]];
+const datasetB = [[date4, 8], [date5, 4], [date6, 6]];
 const styles = {
   width: 500,
   height: 300,
@@ -24,8 +30,7 @@ export default class Hello extends React.Component{
 
   render() {
     return (<div>
-      <h1>{this.state.data.year}</h1>
-      <LineChart {...this.state} {...styles} datasetTotal={datasetTotal} year={this.state.data.year}/>
+      <LineChart {...this.state} {...styles} />
       <div className="controls">
         <button className="btn toggle" onClick={() => this.toggleData()}>
           Toggle Data
