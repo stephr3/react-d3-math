@@ -1,4 +1,5 @@
 import React from 'react';
+import LineChart from './line-chart';
 
 const datasetA = [1,2,3,4];
 const datasetB = [5,3,2,7];
@@ -23,6 +24,7 @@ export default class Hello extends React.Component{
   render() {
     return (<div>
       <h1>{this.state.data}</h1>
+      <LineChart {...this.state} {...styles}/>
       <div className="controls">
         <button className="btn toggle" onClick={() => this.toggleData()}>
           Toggle Data
