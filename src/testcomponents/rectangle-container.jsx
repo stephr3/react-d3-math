@@ -4,11 +4,11 @@ import Rectangle from './rectangle'
 export default class RectangleContainer extends React.Component{
   constructor(props) {
     super(props);
-    this.state = { color: "red" };
+    this.state = { color: "lightcoral" };
   }
 
   changeColor() {
-    var color = this.state.color === "red" ? "steelblue" : "red";
+    var color = this.state.color === "lightcoral" ? "steelblue" : "lightcoral";
     this.setState({ color: color});
     console.log(this.state.color)
   }
