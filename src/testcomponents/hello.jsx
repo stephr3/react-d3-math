@@ -25,7 +25,7 @@ export default class Hello extends React.Component{
   render() {
     return (<div>
       <h1>{this.state.data.year}</h1>
-      <LineChart {...this.state} {...styles} datasetTotal={datasetTotal}/>
+      <LineChart {...this.state} {...styles} datasetTotal={datasetTotal} year={this.state.data.year}/>
       <div className="controls">
         <button className="btn toggle" onClick={() => this.toggleData()}>
           Toggle Data
